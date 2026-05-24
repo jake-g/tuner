@@ -12,6 +12,6 @@
 
 #include <stdbool.h>
 
-void *initfft(int bits);
-void destroyfft( void *fft );
-void applyfft( void * fft, float *xr, float *xi, bool inv );
+void* initfft(int bits);
+void destroyfft(void* fft);
+void applyfft(void* fft, float* xr, float* xi, bool inv);

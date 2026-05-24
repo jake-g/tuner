@@ -1,17 +1,50 @@
-# Tuner
+# tuner
 
-##### Simple guitar tuner. Compiles on OSX and Linux.
+Chromatic guitar tuner for macOS and Linux.
 
-### To Compile:
-1. Download and install portaudio.
-   - For OS X, use homebrew or macports to install -- `brew install portaudio`.
-   - For Ubuntu, use `apt-get install portaudio19-dev`.
-2. run "make"
-3. the output is ./tuner
+`tuner` utilizes PortAudio for real-time microphone input, processes the audio using a Fast Fourier Transform (FFT) combined with a second-order low-pass filter, and maps the peak frequency component to the nearest musical note, calculating the cents sharp/flat dynamically in the terminal.
 
-### Implementation:
-This tuner app works by calculating the magnitude of the FFT and mapping it to a note. Many more ideal methods could be pursued.
+## Requirements
 
-#### Copyright:
-Modified version by Jake Garrison (2014) <br>
-Original concept by Bjorn Roche (2012) <br>
+- **OS**: macOS or Linux.
+- **Dependencies**:
+  - `portaudio` (audio input backend)
+  - `pkg-config` (compilation helper)
+
+### Installing Dependencies
+
+- **macOS (Homebrew)**:
+  ```bash
+  brew install portaudio pkg-config
+  ```
+- **Linux (Ubuntu/Debian)**:
+  ```bash
+  sudo apt-get install portaudio19-dev pkg-config
+  ```
+
+## Getting Started
+
+1. Build the application:
+   ```bash
+   make
+   ```
+2. Run the tuner:
+   ```bash
+   make run
+   ```
+   *(Or execute `./tuner` directly)*
+
+## Makefile Targets
+
+- `make`: Compile the chromatic tuner binary.
+- `make run`: Compile (if needed) and execute the tuner.
+- `make clean`: Remove object files and the tuner binary.
+- `make install`: Install the binary globally to `/usr/local/bin`.
+- `make uninstall`: Remove the binary from `/usr/local/bin`.
+- `make help`: List build targets.
+
+## License & Credits
+
+- Licensed under MIT.
+- Forked and modernized by Jake Garrison.
+- Original project by Bjorn Roche.

@@ -1,18 +1,10 @@
-# Compiled Object files
-*.slo
-*.lo
+# Compiled output
+tuner
+objs/
 *.o
 
-# Compiled Dynamic libraries
-*.so
+# OS metadata
+.DS_Store
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-
-# vi swp files
+# Development files
 *.swp
-
-#build product
-/tuner
